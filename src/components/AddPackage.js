@@ -14,6 +14,7 @@ class AddPackage extends Component {
     this.setState({
       files
     });
+    combineSelectedPackages(files);
   }
 
   handleChange() {

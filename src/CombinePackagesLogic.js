@@ -7,21 +7,63 @@ let packagesDirectory = __dirname + '/packages';
 let map = new Map();
 
 export function combineSelectedPackages(packages) {
-  console.log(packages);
-  iterateOverPackages(packages);
+  return iterateOverPackages(packages);
+}
+
+function readFileAndAddToMap(file){
+  return new Promise((resolve, reject) => {
+    var reader = new FileReader();
+    reader.onload = ((e) => {
+      testParseXML(e.target.result);
+      resolve();
+    });
+
+    reader.onerror = ((error) =>{
+      reject(error);
+    });
+
+    reader.readAsText(file);
+  });
 }
 
 function iterateOverPackages(files) {
+  //create an array to hold your promises
+  var promises = [];
   files.forEach(file => {
-    readXML(file);
-  })
-  filterOldFlowVersions();
-  let packageXML = generatePackageXml();
-  // fs.writeFile(__dirname + '/combinedPackage.xml', packageXML, err => {
-  //   if (err) {
-  //     console.log(err);
-  //   }
-  // })
+    promises.push(readFileAndAddToMap(file));
+  });
+
+  //use reduce to create a chain in the order of the promise array
+  promises.reduce((cur, next) => {
+    return cur.then(next);
+  }, Promise.resolve()).then(() => {
+    //all files read and executed!
+    filterOldFlowVersions();
+    let packageXML = generatePackageXml();
+    return packageXML;
+  }).catch((error) => {
+    //handle potential error
+    console.error(error);
+  });
+}
+
+function testRead(fileName) {
+  let reader = new FileReader();
+  reader.onload = ((e) => {
+    testParseXML(e.target.result);
+  });
+  reader.readAsText(fileName);
+}
+
+function testParseXML(file) {
+  let parser = new xml2js.Parser();
+  parser.parseString(file, (err, result) => {
+    if (err) {
+      console.log('Error parsing xml file: ' + err);
+      return;
+    }
+    iterateOverXMLObjects(result);
+  });
 }
 
 function readXML(fileName) {
@@ -66,7 +108,7 @@ function addMemberToExistingType(name, members) {
 
 function filterOldFlowVersions() {
   let flows = map.get('Flow');
-  if (flows.length < 2) {
+  if (!flows || flows.length < 2) {
     return;
   }
   let flowMap = generateFilteredFlowMap(flows);
