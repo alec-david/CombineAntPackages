@@ -7,31 +7,26 @@ class AddPackage extends Component {
 
   constructor() {
     super()
-    this.state = { files: [] }
+    this.state = { 
+      files: [],
+      packageXML: ''
+    }
   }
 
   onDrop(files) {
     this.setState({
       files
     });
-    combineSelectedPackages(files);
-  }
-
-  handleChange() {
-    let files = this.state.files;
-    let fileList;
-    for (let i = 0; i <= files.length-1; i++) {
-      //let reader = new FileReader();
-      let file = files[i];
-      console.log(file.name);
-      fileList += file.name + '\n';
-    }
-    let fileSpan = document.getElementById('fileList');
-    fileSpan.innerHTML = 'asuh';
   }
 
   combinePackages() {
-    combineSelectedPackages(this.state.files);
+    let combinePromise = combineSelectedPackages(this.state.files);
+    combinePromise.then(result => {
+      console.log(result);
+      this.setState({
+        packageXML: combinePromise
+      });
+    });
   }
 
   render() {

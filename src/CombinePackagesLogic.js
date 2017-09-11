@@ -1,13 +1,36 @@
-//let fs = require('fs');
-import fs from 'fs';
 let xml2js = require('xml2js');
-
-let packagesDirectory = __dirname + '/packages';
 
 let map = new Map();
 
 export function combineSelectedPackages(packages) {
-  return iterateOverPackages(packages);
+  return new Promise((resolve, reject) => {
+    let packageXML = iterateOverPackagesPromise(packages);
+    packageXML.then(result => {
+      resolve(result);
+    }).catch(error => {
+      console.error(error);
+      reject(error);
+    });
+  })
+}
+
+function iterateOverPackagesPromise(files) {
+  return new Promise((resolve,reject) => {
+    var promises = [];
+    files.forEach(file => {
+      promises.push(readFileAndAddToMap(file));
+    });
+
+    Promise.all(promises).then(() => {
+      filterOldFlowVersions();
+      let packageXML = generatePackageXmlPromise();
+      packageXML.then(result => {
+        resolve(packageXML);
+      }).catch(error =>{
+        reject(error);
+      });
+    });
+  });
 }
 
 function readFileAndAddToMap(file){
@@ -26,50 +49,9 @@ function readFileAndAddToMap(file){
   });
 }
 
-function iterateOverPackages(files) {
-  //create an array to hold your promises
-  var promises = [];
-  files.forEach(file => {
-    promises.push(readFileAndAddToMap(file));
-  });
-
-  //use reduce to create a chain in the order of the promise array
-  promises.reduce((cur, next) => {
-    return cur.then(next);
-  }, Promise.resolve()).then(() => {
-    //all files read and executed!
-    filterOldFlowVersions();
-    let packageXML = generatePackageXml();
-    return packageXML;
-  }).catch((error) => {
-    //handle potential error
-    console.error(error);
-  });
-}
-
-function testRead(fileName) {
-  let reader = new FileReader();
-  reader.onload = ((e) => {
-    testParseXML(e.target.result);
-  });
-  reader.readAsText(fileName);
-}
-
 function testParseXML(file) {
   let parser = new xml2js.Parser();
   parser.parseString(file, (err, result) => {
-    if (err) {
-      console.log('Error parsing xml file: ' + err);
-      return;
-    }
-    iterateOverXMLObjects(result);
-  });
-}
-
-function readXML(fileName) {
-  let parser = new xml2js.Parser();
-  let data = fs.readFileSync(fileName);
-  parser.parseString(data, (err, result) => {
     if (err) {
       console.log('Error parsing xml file: ' + err);
       return;
@@ -120,7 +102,7 @@ function generateFilteredFlowMap(flows) {
   let flowMap = new Map();
   flows.forEach(flow => {
     let currentFlow = flow.substr(0,flow.indexOf('-'));
-    let versionNumber = parseInt(flow.substr(flow.indexOf('-')+1));
+    let versionNumber = parseInt(flow.substr(flow.indexOf('-')+1),10);
     if (!flowMap.has(currentFlow) || (flowMap.get(currentFlow) < versionNumber)) {
       flowMap.set(currentFlow, versionNumber);
     }
@@ -136,16 +118,18 @@ function generateFilteredFlowArray(flowMap) {
   return updatedFlows;
 }
 
-function generatePackageXml() {
-  let packageXML = '<?xml version="1.0" encoding="UTF-8"?>\n<Package xmlns="http://soap.sforce.com/2006/04/metadata">\n';
-  map.forEach((val,key) => {
-    packageXML += '\t<types>\n';
-    val.forEach(member => {
-      packageXML += '\t\t<members>' + member + '</members>\n';
+function generatePackageXmlPromise() {
+  return new Promise((resolve, reject) => {
+    let packageXML = '<?xml version="1.0" encoding="UTF-8"?>\n<Package xmlns="http://soap.sforce.com/2006/04/metadata">\n';
+    map.forEach((val,key) => {
+      packageXML += '\t<types>\n';
+      val.forEach(member => {
+        packageXML += '\t\t<members>' + member + '</members>\n';
+      });
+      packageXML += '\t\t<name>' + key + '</name>\n';
+      packageXML += '\t</types>\n';
     });
-    packageXML += '\t\t<name>' + key + '</name>\n';
-    packageXML += '\t</types>\n';
+    packageXML += '\t<version>40.0</version>\n</Package>'
+    resolve(packageXML);
   });
-  packageXML += '\t<version>40.0</version>\n</Package>'
-  return packageXML;
 }
