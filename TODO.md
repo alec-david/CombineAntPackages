@@ -1,0 +1,1 @@
++ Add tooltip message thing after copying to clipboard saying 'Copied!'
