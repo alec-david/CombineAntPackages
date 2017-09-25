@@ -1,0 +1,981 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Calling components function 0 files added -> should not render button to combine files 1`] = `
+<AddPackage>
+  <section>
+    <div
+      className="dropzone"
+    >
+      <Dropzone
+        accept=".xml"
+        disableClick={false}
+        disablePreview={false}
+        disabled={false}
+        maxSize={Infinity}
+        minSize={0}
+        multiple={true}
+        onDrop={[Function]}
+        preventDropOnDocument={true}
+        style={
+          Object {
+            "borderColor": "#666666",
+            "borderRadius": "5px",
+            "borderStyle": "dashed",
+            "borderWidth": "2px",
+            "height": "200px",
+            "width": "400px",
+          }
+        }
+      >
+        <div
+          aria-disabled={false}
+          className=""
+          onClick={[Function]}
+          onDragEnter={[Function]}
+          onDragLeave={[Function]}
+          onDragOver={[Function]}
+          onDragStart={[Function]}
+          onDrop={[Function]}
+          style={
+            Object {
+              "borderColor": "#666666",
+              "borderRadius": "5px",
+              "borderStyle": "dashed",
+              "borderWidth": "2px",
+              "height": "200px",
+              "width": "400px",
+            }
+          }
+        >
+          <p>
+            Try dropping some files here, or click to select files to upload.
+          </p>
+          <input
+            accept=".xml"
+            autoComplete="off"
+            disabled={false}
+            multiple={true}
+            onChange={[Function]}
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+            type="file"
+          />
+        </div>
+      </Dropzone>
+    </div>
+    <div
+      id="combineButton"
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    >
+      <aside>
+        <h2>
+          Selected files
+        </h2>
+        <div />
+      </aside>
+      <input
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#2F4F4F",
+            "border": "1px solid #566963",
+            "borderRadius": "5px",
+            "color": "#ffffff",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fontSize": "15px",
+            "fontWeight": "bold",
+            "height": "50px",
+            "margin": "10px",
+            "textDecoration": "none",
+            "textShadow": "0px-1px0px #2b665e",
+          }
+        }
+        type="button"
+        value="Combine Packages"
+      />
+    </div>
+  </section>
+</AddPackage>
+`;
+
+exports[`Calling components function 1 file added -> should render button to combine files 1`] = `
+<AddPackage>
+  <section>
+    <div
+      className="dropzone"
+    >
+      <Dropzone
+        accept=".xml"
+        disableClick={false}
+        disablePreview={false}
+        disabled={false}
+        maxSize={Infinity}
+        minSize={0}
+        multiple={true}
+        onDrop={[Function]}
+        preventDropOnDocument={true}
+        style={
+          Object {
+            "borderColor": "#666666",
+            "borderRadius": "5px",
+            "borderStyle": "dashed",
+            "borderWidth": "2px",
+            "height": "200px",
+            "width": "400px",
+          }
+        }
+      >
+        <div
+          aria-disabled={false}
+          className=""
+          onClick={[Function]}
+          onDragEnter={[Function]}
+          onDragLeave={[Function]}
+          onDragOver={[Function]}
+          onDragStart={[Function]}
+          onDrop={[Function]}
+          style={
+            Object {
+              "borderColor": "#666666",
+              "borderRadius": "5px",
+              "borderStyle": "dashed",
+              "borderWidth": "2px",
+              "height": "200px",
+              "width": "400px",
+            }
+          }
+        >
+          <p>
+            Try dropping some files here, or click to select files to upload.
+          </p>
+          <input
+            accept=".xml"
+            autoComplete="off"
+            disabled={false}
+            multiple={true}
+            onChange={[Function]}
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+            type="file"
+          />
+        </div>
+      </Dropzone>
+    </div>
+    <div
+      id="combineButton"
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    >
+      <aside>
+        <h2>
+          Selected files
+        </h2>
+        <div />
+      </aside>
+      <input
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#2F4F4F",
+            "border": "1px solid #566963",
+            "borderRadius": "5px",
+            "color": "#ffffff",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fontSize": "15px",
+            "fontWeight": "bold",
+            "height": "50px",
+            "margin": "10px",
+            "textDecoration": "none",
+            "textShadow": "0px-1px0px #2b665e",
+          }
+        }
+        type="button"
+        value="Combine Packages"
+      />
+    </div>
+  </section>
+</AddPackage>
+`;
+
+exports[`Calling components function 2 files added -> should render button to combine files 1`] = `
+<AddPackage>
+  <section>
+    <div
+      className="dropzone"
+    >
+      <Dropzone
+        accept=".xml"
+        disableClick={false}
+        disablePreview={false}
+        disabled={false}
+        maxSize={Infinity}
+        minSize={0}
+        multiple={true}
+        onDrop={[Function]}
+        preventDropOnDocument={true}
+        style={
+          Object {
+            "borderColor": "#666666",
+            "borderRadius": "5px",
+            "borderStyle": "dashed",
+            "borderWidth": "2px",
+            "height": "200px",
+            "width": "400px",
+          }
+        }
+      >
+        <div
+          aria-disabled={false}
+          className=""
+          onClick={[Function]}
+          onDragEnter={[Function]}
+          onDragLeave={[Function]}
+          onDragOver={[Function]}
+          onDragStart={[Function]}
+          onDrop={[Function]}
+          style={
+            Object {
+              "borderColor": "#666666",
+              "borderRadius": "5px",
+              "borderStyle": "dashed",
+              "borderWidth": "2px",
+              "height": "200px",
+              "width": "400px",
+            }
+          }
+        >
+          <p>
+            Try dropping some files here, or click to select files to upload.
+          </p>
+          <input
+            accept=".xml"
+            autoComplete="off"
+            disabled={false}
+            multiple={true}
+            onChange={[Function]}
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+            type="file"
+          />
+        </div>
+      </Dropzone>
+    </div>
+    <div
+      id="combineButton"
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    >
+      <aside>
+        <h2>
+          Selected files
+        </h2>
+        <div />
+      </aside>
+      <input
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#2F4F4F",
+            "border": "1px solid #566963",
+            "borderRadius": "5px",
+            "color": "#ffffff",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fontSize": "15px",
+            "fontWeight": "bold",
+            "height": "50px",
+            "margin": "10px",
+            "textDecoration": "none",
+            "textShadow": "0px-1px0px #2b665e",
+          }
+        }
+        type="button"
+        value="Combine Packages"
+      />
+    </div>
+  </section>
+</AddPackage>
+`;
+
+exports[`Calling the components functions shallow render should not render button to combine files 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <section>
+    <div
+      className="dropzone"
+    >
+      <Dropzone
+        accept=".xml"
+        disableClick={false}
+        disablePreview={false}
+        disabled={false}
+        maxSize={Infinity}
+        minSize={0}
+        multiple={true}
+        onDrop={[Function]}
+        preventDropOnDocument={true}
+        style={
+          Object {
+            "borderColor": "#666666",
+            "borderRadius": "5px",
+            "borderStyle": "dashed",
+            "borderWidth": "2px",
+            "height": "200px",
+            "width": "400px",
+          }
+        }
+      >
+        <p>
+          Try dropping some files here, or click to select files to upload.
+        </p>
+      </Dropzone>
+    </div>
+    <div
+      id="combineButton"
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    >
+      <aside>
+        <h2>
+          Selected files
+        </h2>
+        <div />
+      </aside>
+      <input
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#2F4F4F",
+            "border": "1px solid #566963",
+            "borderRadius": "5px",
+            "color": "#ffffff",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fontSize": "15px",
+            "fontWeight": "bold",
+            "height": "50px",
+            "margin": "10px",
+            "textDecoration": "none",
+            "textShadow": "0px-1px0px #2b665e",
+          }
+        }
+        type="button"
+        value="Combine Packages"
+      />
+    </div>
+  </section>,
+  "nodes": Array [
+    <section>
+      <div
+        className="dropzone"
+      >
+        <Dropzone
+          accept=".xml"
+          disableClick={false}
+          disablePreview={false}
+          disabled={false}
+          maxSize={Infinity}
+          minSize={0}
+          multiple={true}
+          onDrop={[Function]}
+          preventDropOnDocument={true}
+          style={
+            Object {
+              "borderColor": "#666666",
+              "borderRadius": "5px",
+              "borderStyle": "dashed",
+              "borderWidth": "2px",
+              "height": "200px",
+              "width": "400px",
+            }
+          }
+        >
+          <p>
+            Try dropping some files here, or click to select files to upload.
+          </p>
+        </Dropzone>
+      </div>
+      <div
+        id="combineButton"
+        style={
+          Object {
+            "display": "none",
+          }
+        }
+      >
+        <aside>
+          <h2>
+            Selected files
+          </h2>
+          <div />
+        </aside>
+        <input
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#2F4F4F",
+              "border": "1px solid #566963",
+              "borderRadius": "5px",
+              "color": "#ffffff",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fontSize": "15px",
+              "fontWeight": "bold",
+              "height": "50px",
+              "margin": "10px",
+              "textDecoration": "none",
+              "textShadow": "0px-1px0px #2b665e",
+            }
+          }
+          type="button"
+          value="Combine Packages"
+        />
+      </div>
+    </section>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <AddPackage />,
+      "_debugID": 3,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": AddPackage {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {},
+        "refs": Object {},
+        "state": Object {
+          "files": Array [],
+          "packageXML": "",
+        },
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 2,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <section>
+          <div
+            className="dropzone"
+          >
+            <Dropzone
+              accept=".xml"
+              disableClick={false}
+              disablePreview={false}
+              disabled={false}
+              maxSize={Infinity}
+              minSize={0}
+              multiple={true}
+              onDrop={[Function]}
+              preventDropOnDocument={true}
+              style={
+                Object {
+                  "borderColor": "#666666",
+                  "borderRadius": "5px",
+                  "borderStyle": "dashed",
+                  "borderWidth": "2px",
+                  "height": "200px",
+                  "width": "400px",
+                }
+              }
+            >
+              <p>
+                Try dropping some files here, or click to select files to upload.
+              </p>
+            </Dropzone>
+          </div>
+          <div
+            id="combineButton"
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+          >
+            <aside>
+              <h2>
+                Selected files
+              </h2>
+              <div />
+            </aside>
+            <input
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#2F4F4F",
+                  "border": "1px solid #566963",
+                  "borderRadius": "5px",
+                  "color": "#ffffff",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fontSize": "15px",
+                  "fontWeight": "bold",
+                  "height": "50px",
+                  "margin": "10px",
+                  "textDecoration": "none",
+                  "textShadow": "0px-1px0px #2b665e",
+                }
+              }
+              type="button"
+              value="Combine Packages"
+            />
+          </div>
+        </section>,
+        "_debugID": 4,
+        "_renderedOutput": <section>
+          <div
+            className="dropzone"
+          >
+            <Dropzone
+              accept=".xml"
+              disableClick={false}
+              disablePreview={false}
+              disabled={false}
+              maxSize={Infinity}
+              minSize={0}
+              multiple={true}
+              onDrop={[Function]}
+              preventDropOnDocument={true}
+              style={
+                Object {
+                  "borderColor": "#666666",
+                  "borderRadius": "5px",
+                  "borderStyle": "dashed",
+                  "borderWidth": "2px",
+                  "height": "200px",
+                  "width": "400px",
+                }
+              }
+            >
+              <p>
+                Try dropping some files here, or click to select files to upload.
+              </p>
+            </Dropzone>
+          </div>
+          <div
+            id="combineButton"
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+          >
+            <aside>
+              <h2>
+                Selected files
+              </h2>
+              <div />
+            </aside>
+            <input
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#2F4F4F",
+                  "border": "1px solid #566963",
+                  "borderRadius": "5px",
+                  "color": "#ffffff",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fontSize": "15px",
+                  "fontWeight": "bold",
+                  "height": "50px",
+                  "margin": "10px",
+                  "textDecoration": "none",
+                  "textShadow": "0px-1px0px #2b665e",
+                }
+              }
+              type="button"
+              value="Combine Packages"
+            />
+          </div>
+        </section>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <AddPackage />,
+}
+`;
+
+exports[`Creating the component does not fail should match its empty snapshot 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <section>
+    <div
+      className="dropzone"
+    >
+      <Dropzone
+        accept=".xml"
+        disableClick={false}
+        disablePreview={false}
+        disabled={false}
+        maxSize={Infinity}
+        minSize={0}
+        multiple={true}
+        onDrop={[Function]}
+        preventDropOnDocument={true}
+        style={
+          Object {
+            "borderColor": "#666666",
+            "borderRadius": "5px",
+            "borderStyle": "dashed",
+            "borderWidth": "2px",
+            "height": "200px",
+            "width": "400px",
+          }
+        }
+      >
+        <p>
+          Try dropping some files here, or click to select files to upload.
+        </p>
+      </Dropzone>
+    </div>
+    <div
+      id="combineButton"
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    >
+      <aside>
+        <h2>
+          Selected files
+        </h2>
+        <div />
+      </aside>
+      <input
+        onClick={[Function]}
+        style={
+          Object {
+            "backgroundColor": "#2F4F4F",
+            "border": "1px solid #566963",
+            "borderRadius": "5px",
+            "color": "#ffffff",
+            "cursor": "pointer",
+            "display": "inline-block",
+            "fontSize": "15px",
+            "fontWeight": "bold",
+            "height": "50px",
+            "margin": "10px",
+            "textDecoration": "none",
+            "textShadow": "0px-1px0px #2b665e",
+          }
+        }
+        type="button"
+        value="Combine Packages"
+      />
+    </div>
+  </section>,
+  "nodes": Array [
+    <section>
+      <div
+        className="dropzone"
+      >
+        <Dropzone
+          accept=".xml"
+          disableClick={false}
+          disablePreview={false}
+          disabled={false}
+          maxSize={Infinity}
+          minSize={0}
+          multiple={true}
+          onDrop={[Function]}
+          preventDropOnDocument={true}
+          style={
+            Object {
+              "borderColor": "#666666",
+              "borderRadius": "5px",
+              "borderStyle": "dashed",
+              "borderWidth": "2px",
+              "height": "200px",
+              "width": "400px",
+            }
+          }
+        >
+          <p>
+            Try dropping some files here, or click to select files to upload.
+          </p>
+        </Dropzone>
+      </div>
+      <div
+        id="combineButton"
+        style={
+          Object {
+            "display": "none",
+          }
+        }
+      >
+        <aside>
+          <h2>
+            Selected files
+          </h2>
+          <div />
+        </aside>
+        <input
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#2F4F4F",
+              "border": "1px solid #566963",
+              "borderRadius": "5px",
+              "color": "#ffffff",
+              "cursor": "pointer",
+              "display": "inline-block",
+              "fontSize": "15px",
+              "fontWeight": "bold",
+              "height": "50px",
+              "margin": "10px",
+              "textDecoration": "none",
+              "textShadow": "0px-1px0px #2b665e",
+            }
+          }
+          type="button"
+          value="Combine Packages"
+        />
+      </div>
+    </section>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <AddPackage />,
+      "_debugID": 1,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": AddPackage {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {},
+        "refs": Object {},
+        "state": Object {
+          "files": Array [],
+          "packageXML": "",
+        },
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 1,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <section>
+          <div
+            className="dropzone"
+          >
+            <Dropzone
+              accept=".xml"
+              disableClick={false}
+              disablePreview={false}
+              disabled={false}
+              maxSize={Infinity}
+              minSize={0}
+              multiple={true}
+              onDrop={[Function]}
+              preventDropOnDocument={true}
+              style={
+                Object {
+                  "borderColor": "#666666",
+                  "borderRadius": "5px",
+                  "borderStyle": "dashed",
+                  "borderWidth": "2px",
+                  "height": "200px",
+                  "width": "400px",
+                }
+              }
+            >
+              <p>
+                Try dropping some files here, or click to select files to upload.
+              </p>
+            </Dropzone>
+          </div>
+          <div
+            id="combineButton"
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+          >
+            <aside>
+              <h2>
+                Selected files
+              </h2>
+              <div />
+            </aside>
+            <input
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#2F4F4F",
+                  "border": "1px solid #566963",
+                  "borderRadius": "5px",
+                  "color": "#ffffff",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fontSize": "15px",
+                  "fontWeight": "bold",
+                  "height": "50px",
+                  "margin": "10px",
+                  "textDecoration": "none",
+                  "textShadow": "0px-1px0px #2b665e",
+                }
+              }
+              type="button"
+              value="Combine Packages"
+            />
+          </div>
+        </section>,
+        "_debugID": 2,
+        "_renderedOutput": <section>
+          <div
+            className="dropzone"
+          >
+            <Dropzone
+              accept=".xml"
+              disableClick={false}
+              disablePreview={false}
+              disabled={false}
+              maxSize={Infinity}
+              minSize={0}
+              multiple={true}
+              onDrop={[Function]}
+              preventDropOnDocument={true}
+              style={
+                Object {
+                  "borderColor": "#666666",
+                  "borderRadius": "5px",
+                  "borderStyle": "dashed",
+                  "borderWidth": "2px",
+                  "height": "200px",
+                  "width": "400px",
+                }
+              }
+            >
+              <p>
+                Try dropping some files here, or click to select files to upload.
+              </p>
+            </Dropzone>
+          </div>
+          <div
+            id="combineButton"
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+          >
+            <aside>
+              <h2>
+                Selected files
+              </h2>
+              <div />
+            </aside>
+            <input
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#2F4F4F",
+                  "border": "1px solid #566963",
+                  "borderRadius": "5px",
+                  "color": "#ffffff",
+                  "cursor": "pointer",
+                  "display": "inline-block",
+                  "fontSize": "15px",
+                  "fontWeight": "bold",
+                  "height": "50px",
+                  "margin": "10px",
+                  "textDecoration": "none",
+                  "textShadow": "0px-1px0px #2b665e",
+                }
+              }
+              type="button"
+              value="Combine Packages"
+            />
+          </div>
+        </section>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <AddPackage />,
+}
+`;

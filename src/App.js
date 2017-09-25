@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
-import AddPackage from './components/AddPackage';
+import AddAndCombinePackages from "./components/AddAndCombinePackages";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <h1>Combine Ant Packages</h1>
-        <AddPackage/>
+        <AddAndCombinePackages />
       </div>
     );
   }

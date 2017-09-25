@@ -18,6 +18,7 @@
     "enzyme": "^2.9.1",
     "enzyme-to-json": "^2.0.0",
     "jest": "^21.1.0",
+    "jest-css-modules": "^1.1.0",
     "react-scripts": "1.0.13",
     "react-test-renderer": "^15.6.1"
   },
@@ -29,5 +30,10 @@
   },
   "prettier": {
     "jsxBracketSameLine": true
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css)$": "<rootDir>/node_modules/jest-css-modules"
+    }
   }
 }

@@ -17,7 +17,7 @@ class AddPackage extends Component {
 
   onDrop(files) {
     if (files.length > 0) {
-      let combinePackageButton = document.getElementById("combineButton");
+      let combinePackageButton = this.combineButton;
       combinePackageButton.style.display = "inline";
     }
     this.setState({
@@ -107,19 +107,24 @@ class AddPackage extends Component {
               </p>
             </Dropzone>
           </div>
-          <aside>
-            <h2>Selected files</h2>
-            <div>
-              {this.state.files.map(f => (
-                <span key={f.name}>
-                  {f.name} - {f.size} bytes
-                  <br />
-                  <br />
-                </span>
-              ))}
-            </div>
-          </aside>
-          <div id="combineButton" style={{ display: "none" }}>
+          <div
+            id="combineButton"
+            ref={buttonDiv => {
+              this.combineButton = buttonDiv;
+            }}
+            style={{ display: "none" }}>
+            <aside>
+              <h2>Selected files</h2>
+              <div>
+                {this.state.files.map(f => (
+                  <span key={f.name}>
+                    {f.name} - {f.size} bytes
+                    <br />
+                    <br />
+                  </span>
+                ))}
+              </div>
+            </aside>
             <input
               type="button"
               value="Combine Packages"
