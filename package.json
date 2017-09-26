@@ -29,7 +29,8 @@
     "eject": "react-scripts eject"
   },
   "prettier": {
-    "jsxBracketSameLine": true
+    "jsxBracketSameLine": true,
+    "singleQuote": true
   },
   "jest": {
     "moduleNameMapper": {

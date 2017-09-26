@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Dropzone from "react-dropzone";
 import Clipboard from "clipboard";
+import * as styles from "../utils/styles";
 
 import { combineSelectedPackages } from "../utils/CombinePackagesLogic";
 
@@ -61,36 +62,6 @@ class AddPackage extends Component {
   }
 
   render() {
-    var dropzoneStyle = {
-      width: 400 + "px",
-      height: 200 + "px",
-      borderWidth: 2 + "px",
-      borderColor: "#666666",
-      borderStyle: "dashed",
-      borderRadius: 5 + "px"
-    };
-    var formatPackage = {
-      whiteSpace: "pre-wrap",
-      textAlign: "left",
-      margin: "auto",
-      width: 60 + "%",
-      backgroundColor: "#d3d3d3"
-    };
-    var buttonStyle = {
-      backgroundColor: "#2F4F4F",
-      borderRadius: 5 + "px",
-      border: 1 + "px solid #566963",
-      display: "inline-block",
-      cursor: "pointer",
-      color: "#ffffff",
-      fontSize: 15 + "px",
-      fontWeight: "bold",
-      height: 50 + "px",
-      textDecoration: "none",
-      textShadow: 0 + "px" + -1 + "px" + 0 + "px #2b665e",
-      margin: 10 + "px"
-    };
-
     let combinedPackage = this.state.packageXML;
 
     if (!combinedPackage) {
@@ -100,7 +71,7 @@ class AddPackage extends Component {
             <Dropzone
               onDrop={this.onDrop.bind(this)}
               accept=".xml"
-              style={dropzoneStyle}>
+              style={styles.dropzoneStyle}>
               <p>
                 Try dropping some files here, or click to select files to
                 upload.
@@ -129,7 +100,7 @@ class AddPackage extends Component {
               type="button"
               value="Combine Packages"
               onClick={this.combinePackages.bind(this)}
-              style={buttonStyle}
+              style={styles.buttonStyle}
             />
           </div>
         </section>
@@ -140,17 +111,17 @@ class AddPackage extends Component {
         <button
           className="btn"
           data-clipboard-text={combinedPackage}
-          style={buttonStyle}>
+          style={styles.buttonStyle}>
           Copy package.xml to clipboard
         </button>
         <button
           onClick={() => this.fileDownload(combinedPackage, "package.xml")}
-          style={buttonStyle}>
+          style={styles.buttonStyle}>
           Download Combined Package
         </button>
         <button
           onClick={() => this.setState({ packageXML: "", files: [] })}
-          style={buttonStyle}>
+          style={styles.buttonStyle}>
           Create New Combined Package
         </button>
         <br />
@@ -159,7 +130,7 @@ class AddPackage extends Component {
         <h3>Combined Package:</h3>
         <br />
         <br />
-        <div style={formatPackage}>
+        <div style={styles.formatPackage}>
           <span>{combinedPackage}</span>
         </div>
       </div>
