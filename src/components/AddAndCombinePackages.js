@@ -1,25 +1,25 @@
-import React, { Component } from "react";
-import Dropzone from "react-dropzone";
-import Clipboard from "clipboard";
-import * as styles from "../utils/styles";
+import React, { Component } from 'react';
+import Dropzone from 'react-dropzone';
+import Clipboard from 'clipboard';
+import * as styles from '../utils/styles';
 
-import { combineSelectedPackages } from "../utils/CombinePackagesLogic";
+import { combineSelectedPackages } from '../utils/CombinePackagesLogic';
 
-new Clipboard(".btn");
+new Clipboard('.btn');
 
 class AddPackage extends Component {
   constructor() {
     super();
     this.state = {
       files: [],
-      packageXML: ""
+      packageXML: ''
     };
   }
 
   onDrop(files) {
     if (files.length > 0) {
       let combinePackageButton = this.combineButton;
-      combinePackageButton.style.display = "inline";
+      combinePackageButton.style.display = 'inline';
     }
     this.setState({
       files
@@ -36,22 +36,22 @@ class AddPackage extends Component {
   }
 
   fileDownload(data, filename, mime) {
-    let blob = new Blob([data], { type: mime || "application/octet-stream" });
+    let blob = new Blob([data], { type: mime || 'application/octet-stream' });
 
     // IE workaround
-    if (typeof window.navigator.msSaveBlob !== "undefined") {
+    if (typeof window.navigator.msSaveBlob !== 'undefined') {
       window.navigator.msSaveBlob(blob, filename);
     } else {
       let blobURL = window.URL.createObjectURL(blob);
-      let tempLink = document.createElement("a");
-      tempLink.style.display = "none";
+      let tempLink = document.createElement('a');
+      tempLink.style.display = 'none';
       tempLink.href = blobURL;
-      tempLink.setAttribute("download", filename);
+      tempLink.setAttribute('download', filename);
 
       // Safari thinks _blank anchor are pop ups. We only want to set _blank
       // target if the browser does not support the HTML5 download attribute.
-      if (typeof tempLink.download === "undefined") {
-        tempLink.setAttribute("target", "_blank");
+      if (typeof tempLink.download === 'undefined') {
+        tempLink.setAttribute('target', '_blank');
       }
 
       document.body.appendChild(tempLink);
@@ -83,7 +83,7 @@ class AddPackage extends Component {
             ref={buttonDiv => {
               this.combineButton = buttonDiv;
             }}
-            style={{ display: "none" }}>
+            style={{ display: 'none' }}>
             <aside>
               <h2>Selected files</h2>
               <div>
@@ -115,12 +115,12 @@ class AddPackage extends Component {
           Copy package.xml to clipboard
         </button>
         <button
-          onClick={() => this.fileDownload(combinedPackage, "package.xml")}
+          onClick={() => this.fileDownload(combinedPackage, 'package.xml')}
           style={styles.buttonStyle}>
           Download Combined Package
         </button>
         <button
-          onClick={() => this.setState({ packageXML: "", files: [] })}
+          onClick={() => this.setState({ packageXML: '', files: [] })}
           style={styles.buttonStyle}>
           Create New Combined Package
         </button>
