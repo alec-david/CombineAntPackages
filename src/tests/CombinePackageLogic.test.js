@@ -1,17 +1,36 @@
 import { combineSelectedPackages } from '../utils/CombinePackagesLogic';
 
 describe('Combine Packages', () => {
-  it('Basic test', () => {
-    expect(2 + 2).toBe(4);
+  it('Combine no packages, should return empty pacakge', () => {
+    expect.assertions(1);
+    return combineSelectedPackages([]).then(data => {
+      expect(data).toMatchSnapshot();
+    });
   });
 
   const file1 = generateFile(1);
-  // it('Combine 1 package, package should not change', () => {
-  //   expect.assertions(1);
-  //   return combineSelectedPackages().then(data => {
-  //     expect(data).toBe();
-  //   });
-  // });
+  it('Combine 1 package, package should not change', () => {
+    expect.assertions(1);
+    return combineSelectedPackages([file1]).then(data => {
+      expect(data).toMatchSnapshot();
+    });
+  });
+
+  const file2 = generateFile(2);
+  it('Combine 2 packages, packages should combine with no repeats', () => {
+    expect.assertions(1);
+    return combineSelectedPackages([file1, file2]).then(data => {
+      expect(data).toMatchSnapshot();
+    });
+  });
+
+  const file3 = generateFile(3);
+  it('Combine 3 packages, packages should combine with no repeats', () => {
+    expect.assertions(1);
+    return combineSelectedPackages([file1, file2, file3]).then(data => {
+      expect(data).toMatchSnapshot();
+    });
+  });
 });
 
 function generateFile(num) {
@@ -384,9 +403,8 @@ function getPackageTwo() {
 
 function getBlankPackage() {
   return `
-    <?xml version="1.0" encoding="UTF-8"?>
-    <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-        <version>40.0</version>
-    </Package>
-    `;
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+  <version>40.0</version>
+</Package>`;
 }

@@ -5,45 +5,51 @@ let map = new Map();
 export function combineSelectedPackages(packages) {
   return new Promise((resolve, reject) => {
     let packageXML = iterateOverPackagesPromise(packages);
-    packageXML.then(result => {
-      resolve(result);
-    }).catch(error => {
-      console.error(error);
-      reject(error);
-    });
-  })
+    packageXML
+      .then(result => {
+        resolve(result);
+      })
+      .catch(error => {
+        console.error(error);
+        reject(error);
+      });
+  });
 }
 
 function iterateOverPackagesPromise(files) {
-  return new Promise((resolve,reject) => {
+  return new Promise((resolve, reject) => {
     var promises = [];
     files.forEach(file => {
-      promises.push(readFileAndAddToMap(file));
+      if (file.size) {
+        promises.push(readFileAndAddToMap(file));
+      }
     });
 
     Promise.all(promises).then(() => {
       filterOldFlowVersions();
       let packageXML = generatePackageXmlPromise();
-      packageXML.then(result => {
-        resolve(packageXML);
-      }).catch(error =>{
-        reject(error);
-      });
+      packageXML
+        .then(result => {
+          resolve(packageXML);
+        })
+        .catch(error => {
+          reject(error);
+        });
     });
   });
 }
 
-function readFileAndAddToMap(file){
+function readFileAndAddToMap(file) {
   return new Promise((resolve, reject) => {
     var reader = new FileReader();
-    reader.onload = ((e) => {
+    reader.onload = e => {
       testParseXML(e.target.result);
       resolve();
-    });
+    };
 
-    reader.onerror = ((error) =>{
+    reader.onerror = error => {
       reject(error);
-    });
+    };
 
     reader.readAsText(file);
   });
@@ -62,9 +68,11 @@ function testParseXML(file) {
 
 function iterateOverXMLObjects(data) {
   let objArr = data.Package.types;
-  objArr.forEach(type => {
-    setMapValues(type);
-  });
+  if (objArr) {
+    objArr.forEach(type => {
+      setMapValues(type);
+    });
+  }
 }
 
 function setMapValues(type) {
@@ -74,7 +82,7 @@ function setMapValues(type) {
     let existingMembers = addMemberToExistingType(name, members);
     map.set(name, existingMembers);
   } else {
-    map.set(name,members);
+    map.set(name, members);
   }
 }
 
@@ -84,7 +92,7 @@ function addMemberToExistingType(name, members) {
     if (!(existingMembers.indexOf(member) > -1)) {
       existingMembers.push(member);
     }
-  })
+  });
   return existingMembers;
 }
 
@@ -101,9 +109,9 @@ function filterOldFlowVersions() {
 function generateFilteredFlowMap(flows) {
   let flowMap = new Map();
   flows.forEach(flow => {
-    let currentFlow = flow.substr(0,flow.indexOf('-'));
-    let versionNumber = parseInt(flow.substr(flow.indexOf('-')+1),10);
-    if (!flowMap.has(currentFlow) || (flowMap.get(currentFlow) < versionNumber)) {
+    let currentFlow = flow.substr(0, flow.indexOf('-'));
+    let versionNumber = parseInt(flow.substr(flow.indexOf('-') + 1), 10);
+    if (!flowMap.has(currentFlow) || flowMap.get(currentFlow) < versionNumber) {
       flowMap.set(currentFlow, versionNumber);
     }
   });
@@ -120,8 +128,9 @@ function generateFilteredFlowArray(flowMap) {
 
 function generatePackageXmlPromise() {
   return new Promise((resolve, reject) => {
-    let packageXML = '<?xml version="1.0" encoding="UTF-8"?>\n<Package xmlns="http://soap.sforce.com/2006/04/metadata">\n';
-    map.forEach((val,key) => {
+    let packageXML =
+      '<?xml version="1.0" encoding="UTF-8"?>\n<Package xmlns="http://soap.sforce.com/2006/04/metadata">\n';
+    map.forEach((val, key) => {
       packageXML += '\t<types>\n';
       val.forEach(member => {
         packageXML += '\t\t<members>' + member + '</members>\n';
@@ -129,7 +138,7 @@ function generatePackageXmlPromise() {
       packageXML += '\t\t<name>' + key + '</name>\n';
       packageXML += '\t</types>\n';
     });
-    packageXML += '\t<version>40.0</version>\n</Package>'
+    packageXML += '\t<version>40.0</version>\n</Package>';
     resolve(packageXML);
   });
 }
