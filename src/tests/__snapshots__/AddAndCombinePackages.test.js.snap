@@ -3620,6 +3620,7 @@ ShallowWrapper {
           style={
             Object {
               "backgroundColor": "#d3d3d3",
+              "display": "flex",
               "margin": "auto",
               "textAlign": "left",
               "whiteSpace": "pre-wrap",
@@ -3627,9 +3628,20 @@ ShallowWrapper {
             }
           }
         >
-          <span>
-            test
-          </span>
+          <TextareaAutosize
+            name="packageTextArea"
+            onChange={[Function]}
+            onHeightChange={[Function]}
+            spellcheck="false"
+            style={
+              Object {
+                "backgroundColor": "#d3d3d3",
+                "width": "100%",
+              }
+            }
+            useCacheForDOMMeasurements={false}
+            value="test"
+          />
         </div>,
       ],
     },
@@ -3775,11 +3787,23 @@ ShallowWrapper {
         "key": null,
         "nodeType": "host",
         "props": Object {
-          "children": <span>
-            test
-          </span>,
+          "children": <TextareaAutosize
+            name="packageTextArea"
+            onChange={[Function]}
+            onHeightChange={[Function]}
+            spellcheck="false"
+            style={
+              Object {
+                "backgroundColor": "#d3d3d3",
+                "width": "100%",
+              }
+            }
+            useCacheForDOMMeasurements={false}
+            value="test"
+          />,
           "style": Object {
             "backgroundColor": "#d3d3d3",
+            "display": "flex",
             "margin": "auto",
             "textAlign": "left",
             "whiteSpace": "pre-wrap",
@@ -3790,13 +3814,22 @@ ShallowWrapper {
         "rendered": Object {
           "instance": null,
           "key": null,
-          "nodeType": "host",
+          "nodeType": "class",
           "props": Object {
-            "children": "test",
+            "name": "packageTextArea",
+            "onChange": [Function],
+            "onHeightChange": [Function],
+            "spellcheck": "false",
+            "style": Object {
+              "backgroundColor": "#d3d3d3",
+              "width": "100%",
+            },
+            "useCacheForDOMMeasurements": false,
+            "value": "test",
           },
           "ref": null,
-          "rendered": "test",
-          "type": "span",
+          "rendered": null,
+          "type": [Function],
         },
         "type": "div",
       },
@@ -3886,6 +3919,7 @@ ShallowWrapper {
             style={
               Object {
                 "backgroundColor": "#d3d3d3",
+                "display": "flex",
                 "margin": "auto",
                 "textAlign": "left",
                 "whiteSpace": "pre-wrap",
@@ -3893,9 +3927,20 @@ ShallowWrapper {
               }
             }
           >
-            <span>
-              test
-            </span>
+            <TextareaAutosize
+              name="packageTextArea"
+              onChange={[Function]}
+              onHeightChange={[Function]}
+              spellcheck="false"
+              style={
+                Object {
+                  "backgroundColor": "#d3d3d3",
+                  "width": "100%",
+                }
+              }
+              useCacheForDOMMeasurements={false}
+              value="test"
+            />
           </div>,
         ],
       },
@@ -4041,11 +4086,23 @@ ShallowWrapper {
           "key": null,
           "nodeType": "host",
           "props": Object {
-            "children": <span>
-              test
-            </span>,
+            "children": <TextareaAutosize
+              name="packageTextArea"
+              onChange={[Function]}
+              onHeightChange={[Function]}
+              spellcheck="false"
+              style={
+                Object {
+                  "backgroundColor": "#d3d3d3",
+                  "width": "100%",
+                }
+              }
+              useCacheForDOMMeasurements={false}
+              value="test"
+            />,
             "style": Object {
               "backgroundColor": "#d3d3d3",
+              "display": "flex",
               "margin": "auto",
               "textAlign": "left",
               "whiteSpace": "pre-wrap",
@@ -4056,13 +4113,22 @@ ShallowWrapper {
           "rendered": Object {
             "instance": null,
             "key": null,
-            "nodeType": "host",
+            "nodeType": "class",
             "props": Object {
-              "children": "test",
+              "name": "packageTextArea",
+              "onChange": [Function],
+              "onHeightChange": [Function],
+              "spellcheck": "false",
+              "style": Object {
+                "backgroundColor": "#d3d3d3",
+                "width": "100%",
+              },
+              "useCacheForDOMMeasurements": false,
+              "value": "test",
             },
             "ref": null,
-            "rendered": "test",
-            "type": "span",
+            "rendered": null,
+            "type": [Function],
           },
           "type": "div",
         },

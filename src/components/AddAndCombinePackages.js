@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
 import Clipboard from 'clipboard';
-import * as styles from '../utils/styles';
+import Textarea from 'react-textarea-autosize';
 
+import * as styles from '../utils/styles';
 import { combineSelectedPackages } from '../utils/CombinePackagesLogic';
 
 new Clipboard('.btn');
@@ -131,7 +132,12 @@ class AddPackage extends Component {
         <br />
         <br />
         <div style={styles.formatPackage}>
-          <span>{combinedPackage}</span>
+          <Textarea
+            name="packageTextArea"
+            value={combinedPackage}
+            style={styles.textAreaStyle}
+            spellcheck="false"
+          />
         </div>
       </div>
     );
