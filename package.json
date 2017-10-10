@@ -19,6 +19,7 @@
     "enzyme": "^3.0.0",
     "enzyme-adapter-react-16": "^1.0.0",
     "enzyme-to-json": "3.0.1",
+    "gh-pages": "^1.0.0",
     "jest": "^21.2.0",
     "jest-css-modules": "^1.1.0",
     "react-scripts": "1.0.14",
@@ -28,7 +29,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "yarn run build&&gh-pages -d build"
   },
   "prettier": {
     "jsxBracketSameLine": true,
@@ -38,5 +40,6 @@
     "moduleNameMapper": {
       "\\.(css)$": "<rootDir>/node_modules/jest-css-modules"
     }
-  }
+  },
+  "homepage": "https://alec-david.github.io/CombineAntPackages"
 }

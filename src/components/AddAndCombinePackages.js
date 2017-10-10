@@ -101,7 +101,7 @@ class AddPackage extends Component {
               type="button"
               value="Combine Packages"
               onClick={this.combinePackages.bind(this)}
-              style={styles.buttonStyle}
+              style={styles.blueButtonStyle}
             />
           </div>
         </section>
@@ -110,25 +110,25 @@ class AddPackage extends Component {
     return (
       <div>
         <button
-          className="btn"
-          data-clipboard-text={combinedPackage}
-          style={styles.buttonStyle}>
-          Copy package.xml to clipboard
-        </button>
-        <button
-          onClick={() => this.fileDownload(combinedPackage, 'package.xml')}
-          style={styles.buttonStyle}>
-          Download Combined Package
-        </button>
-        <button
           onClick={() => this.setState({ packageXML: '', files: [] })}
-          style={styles.buttonStyle}>
+          style={styles.redButtonStyle}>
           Create New Combined Package
         </button>
         <br />
         <br />
         <br />
         <h3>Combined Package:</h3>
+        <button
+          className="btn"
+          data-clipboard-text={combinedPackage}
+          style={styles.blueButtonStyle}>
+          Copy package.xml to clipboard
+        </button>
+        <button
+          onClick={() => this.fileDownload(combinedPackage, 'package.xml')}
+          style={styles.blueButtonStyle}>
+          Download Combined Package
+        </button>
         <br />
         <br />
         <div style={styles.formatPackage}>
