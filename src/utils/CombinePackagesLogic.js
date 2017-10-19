@@ -43,7 +43,7 @@ function readFileAndAddToMap(file) {
   return new Promise((resolve, reject) => {
     var reader = new FileReader();
     reader.onload = e => {
-      testParseXML(e.target.result);
+      parseXML(e.target.result);
       resolve();
     };
 
@@ -55,7 +55,7 @@ function readFileAndAddToMap(file) {
   });
 }
 
-function testParseXML(file) {
+function parseXML(file) {
   let parser = new xml2js.Parser();
   parser.parseString(file, (err, result) => {
     if (err) {
@@ -67,6 +67,9 @@ function testParseXML(file) {
 }
 
 function iterateOverXMLObjects(data) {
+  if (!data.Package || !data.Package.types) {
+    return;
+  }
   let objArr = data.Package.types;
   if (objArr) {
     objArr.forEach(type => {

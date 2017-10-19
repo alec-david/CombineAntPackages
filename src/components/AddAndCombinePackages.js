@@ -136,7 +136,7 @@ class AddPackage extends Component {
             name="packageTextArea"
             value={combinedPackage}
             style={styles.textAreaStyle}
-            spellcheck="false"
+            spellCheck="false"
           />
         </div>
       </div>
